@@ -15,6 +15,7 @@
     "nanoid": "^5.0.6",
     "nanoid-dictionary": "^4.3.0",
     "next-auth": "^4.24.7",
+    "nodemailer": "^6.9.13",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
