@@ -74,6 +74,7 @@ async function onRequestResetPassword(event: Event) {
       },
       body: { email: emailInputRef.value?.value },
     });
+    errorMessage.value = "";
     message.value = "A reset password link has been sent to your email";
   } catch (err: { data: NuxtError }) {
     const error = err.data;

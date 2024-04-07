@@ -2,8 +2,8 @@
   <div class="flex gap-7 rounded-2xl bg-black p-8">
     <div class="img-container">
       <img
-        class="max-w-full"
-        src="@/assets/images/canvas002.jpg"
+        class="h-[500px] sm:min-w-[350px]"
+        src="@/assets/images/canvas002.webp"
         alt="websites"
       />
     </div>

@@ -1,0 +1,39 @@
+body {
+  @apply !text-[16px];
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.signUp-enter-active,
+.signUp-leave-active,
+.lostPass-enter-active,
+.lostPass-leave-active {
+  transition: all 0.5s;
+}
+
+.signUp-enter-from {
+  transform: translateX(-80vw);
+}
+.signUp-enter-to {
+  transform: translateX(0);
+}
+.signUp-leave-from {
+  transform: translateX(0);
+}
+.signUp-leave-to {
+  transform: translateX(-80vw);
+}
+
+.lostPass-enter-from {
+  transform: translateX(80vw);
+}
+.lostPass-enter-to {
+  transform: translateX(0);
+}
+.lostPass-leave-from {
+  transform: translateX(0);
+}
+.lostPass-leave-to {
+  transform: translateX(80vw);
+}

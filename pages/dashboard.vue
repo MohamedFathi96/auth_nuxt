@@ -4,7 +4,7 @@
       class="flex justify-between bg-blue-700 px-[30px] py-[20px] text-lg font-semibold text-white"
     >
       <span>Welcome</span>
-      <nuxt-link to="/auth/sign-in">SignIn/Up</nuxt-link>
+      <button @click="sighOutHandler" type="button">Sign Out</button>
     </nav>
 
     <div class="flex grow items-center justify-center">
@@ -18,11 +18,10 @@
 <script setup lang="ts">
 definePageMeta({
   middleware: "auth",
-  auth: {
-    unauthenticatedOnly: true,
-    navigateAuthenticatedTo: "/dashboard",
-  },
 });
+
+const { signOut } = useAuth();
+const sighOutHandler = async () => await signOut();
 </script>
 
 <style scoped></style>

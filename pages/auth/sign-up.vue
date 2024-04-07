@@ -73,7 +73,6 @@ definePageMeta({
   ],
   auth: {
     unauthenticatedOnly: true,
-    navigateAuthenticatedTo: "/dashboard/categories",
   },
 });
 

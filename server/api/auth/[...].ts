@@ -15,13 +15,13 @@ export default NuxtAuthHandler({
     CredentialsProvider.default({
       name: "credentials",
       credentials: {
-        username: { label: "Username", type: "text" },
+        email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any) {
-        const { username, password } = credentials!;
+        const { email, password } = credentials!;
         try {
-          const user = await getUser("NAME", credentials.username);
+          const user = await getUser("EMAIL", email);
           // Return null if user data could not be retrieved
           if (!user || !user.verified)
             throw createError({

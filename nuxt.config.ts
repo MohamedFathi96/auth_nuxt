@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@sidebase/nuxt-auth"],
+  css: ["~/assets/css/main.css"],
   auth: {
     baseURL: process.env.NEXTAUTH_URL,
     provider: {
@@ -16,5 +17,7 @@ export default defineNuxtConfig({
     mysqlUser: process.env.NUXT_MYSQL_USER,
     mysqlPassword: process.env.NUXT_MYSQL_PASSWORD,
     authSecret: process.env.AUTH_SECRET,
+    gmailEmail: process.env.NUXT_GMAIL_USER,
+    gmailPassword: process.env.NUXT_GMAIL_PASSWORD,
   },
 });

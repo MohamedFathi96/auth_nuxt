@@ -8,9 +8,9 @@
         <input
           class="p-3 outline-none"
           type="text"
-          name="username"
-          placeholder="username"
-          v-model="username"
+          name="email"
+          placeholder="email"
+          v-model="email"
           :required="true"
         />
         <input
@@ -56,14 +56,14 @@ definePageMeta({
     unauthenticatedOnly: true,
   },
 });
-const username = ref("");
+const email = ref("");
 const password = ref("");
 const { signIn, data } = useAuth();
 const errorMessage = ref("");
 
 async function signInWithCredentials() {
   const credentials = {
-    username: username.value,
+    email: email.value,
     password: password.value,
   };
   try {
@@ -80,12 +80,10 @@ async function signInWithCredentials() {
             : "Something Went Wron!!!",
       };
 
-    data.value?.user?.role === "ADMIN"
-      ? navigateTo("/dashboard/categories")
-      : navigateTo("/");
+    navigateTo("/");
   } catch (error: { messgae: string }) {
     errorMessage.value = error.message;
-    username.value = "";
+    email.value = "";
     password.value = "";
   }
 }

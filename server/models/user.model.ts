@@ -15,7 +15,8 @@ export type UserModel = {
 
 export const getUser = async (key: "NAME" | "ID" | "EMAIL", value: string) => {
   const [user] = await executeQuery({
-    query: `SELECT * FROM \`my_top_websites\`.users where ${key.toLowerCase()} = '${value}';`,
+    query: `SELECT * FROM users where ${key.toLowerCase()} = ?;`,
+    values: [value],
   });
 
   return user as UserModel;
@@ -28,7 +29,8 @@ export const updateUser = async (updatedUser: Partial<UserModel>) => {
     .join(", ");
 
   const result = await executeQuery({
-    query: `UPDATE my_top_websites.users SET ${updateFields} WHERE id = '${id}';`,
+    query: `UPDATE users SET ${updateFields} WHERE id = ?;`,
+    values: [id],
   });
 
   return result;
@@ -36,7 +38,7 @@ export const updateUser = async (updatedUser: Partial<UserModel>) => {
 
 export const createUser = async (userInfo: UserModel) => {
   const result = await executeQuery({
-    query: `INSERT INTO \`my_top_websites\`.users (id, name, email, password, verificationCode, verificationCodeExpAt) VALUES (?, ?, ?, ?, ?, ?);
+    query: `INSERT INTO users (id, name, email, password, verificationCode, verificationCodeExpAt) VALUES (?, ?, ?, ?, ?, ?);
 `,
     values: Object.values(userInfo),
   });
