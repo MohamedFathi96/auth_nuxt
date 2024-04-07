@@ -9,7 +9,7 @@
 
     <div class="flex grow items-center justify-center">
       <h1 class="text-[2.5rem] font-semibold italic">
-        Home Page You Are Not Authenticated...
+        {{ isAdmin ? "Admin Dashboard" : "User Dashboard" }}
       </h1>
     </div>
   </div>
@@ -20,7 +20,8 @@ definePageMeta({
   middleware: "auth",
 });
 
-const { signOut } = useAuth();
+const { signOut, data } = useAuth();
+const isAdmin = ref(data.value?.user?.role === "ADMIN");
 const sighOutHandler = async () => await signOut();
 </script>
 
