@@ -1,4 +1,4 @@
-import { UserModel, createUser } from "~/server/model/user.model";
+import { UserModel, createUser } from "~/server/models/user.model";
 
 export default defineEventHandler(async (event) => {
   try {

@@ -1,4 +1,4 @@
-import { getUser, updateUser } from "~/server/model/user.model";
+import { getUser, updateUser } from "~/server/models/user.model";
 
 export default defineEventHandler(async (event) => {
   try {

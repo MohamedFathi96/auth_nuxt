@@ -2,7 +2,7 @@
 import { NuxtAuthHandler } from "#auth";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { getUser } from "~/server/model/user.model";
+import { getUser } from "~/server/models/user.model";
 import bcrypt from "bcrypt";
 
 export default NuxtAuthHandler({

@@ -1,4 +1,4 @@
-import { getUser, updateUser } from "~/server/model/user.model";
+import { getUser, updateUser } from "~/server/models/user.model";
 import bcrypt from "bcrypt";
 
 interface Query {
@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
     }
     const isResetPasswordIDCorrect = await bcrypt.compare(
       query.id,
-      user.resetPassword!
+      user.resetPassword!,
     );
     if (!isResetPasswordIDCorrect) {
       return createError({ statusCode: 400, statusMessage: "Invalid link ID" });
