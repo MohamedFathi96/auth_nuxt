@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
     await createUser(user);
 
     const emailTemplate = getVerificatoinTemplate({
-      appName: "Top Websites",
+      appName: "Nuxt Auth",
       username: user.name,
       verificationCode,
     });

@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
     await updateUser({ id: user.id, resetPassword, resetPasswordExpAt });
 
     const emailTemplate = getForgetTemplate({
-      appName: "Top Websites",
+      appName: "Nuxt Auth",
       username: user.name,
       resetLink: `${
         useRuntimeConfig().appUrl
